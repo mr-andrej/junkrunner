@@ -1,0 +1,55 @@
+{
+  "credits": 280,
+  "blackCredits": 0,
+  "initialDebt": 1200,
+  "debt": 1200,
+  "debtDays": 14,
+  "day": 1,
+  "heat": 0,
+  "maxHeat": 100,
+  "repFixer": 0,
+  "repBlackMarket": 0,
+  "arasawaWarning": 0,
+  "rig": {
+    "cpu": {
+      "id": "cpu_celeron",
+      "name": "Celeron Scrap",
+      "threads": 2,
+      "power": 15
+    },
+    "ram": {
+      "id": "ram_4gb",
+      "name": "4GB DDR3 Bent",
+      "gb": 4
+    },
+    "gpu": null,
+    "network": {
+      "id": "net_dongle",
+      "name": "USB Dongle Knockoff",
+      "range": 1,
+      "integrity": 40
+    },
+    "cooling": {
+      "id": "cooling_heatsink",
+      "name": "Bent Heatsink",
+      "capacity": 30
+    },
+    "storage": {
+      "id": "storage_64",
+      "name": "64GB Flash",
+      "gb": 64
+    }
+  },
+  "software": [
+    "basic_sniffer.exe",
+    "file_recovery.sh"
+  ],
+  "inventory": [],
+  "jobs": [],
+  "completedJobs": [],
+  "activeJob": null,
+  "traceLevel": 0,
+  "location": "hideout",
+  "log": [],
+  "flags": {}
+}

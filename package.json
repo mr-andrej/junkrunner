@@ -1,0 +1,40 @@
+{
+  "name": "junkrunner",
+  "version": "0.1.0",
+  "description": "JUNKRUNNER OS - A cyberpunk terminal game",
+  "main": "main-loader.cjs",
+  "homepage": "./",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "build": "vite build && node scripts/copy-electron.js",
+    "pack": "npm run build && electron-packager . JUNKRUNNER --platform=win32 --arch=x64 --out=release --overwrite",
+    "dist": "npm run build && electron-packager . JUNKRUNNER --platform=win32 --arch=x64 --out=release --overwrite",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.2.0",
+    "concurrently": "^8.2.0",
+    "electron": "^27.0.0",
+    "electron-packager": "^17.1.1",
+    "vite": "^5.0.8",
+    "wait-on": "^7.1.0"
+  },
+  "electronPackager": {
+    "ignore": [
+      "^\\.git$",
+      "^\\.gitignore$",
+      "^src$",
+      "^scripts$",
+      "^vite\\.config\\.js$",
+      "^README\\.md$",
+      "^\\.env.*"
+    ]
+  }
+}

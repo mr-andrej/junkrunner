@@ -1,0 +1,14 @@
+[
+  "JUNKRUNNER OS v0.4.1 -- UNAUTHORIZED BUILD",
+  "Copyright (c) 2047 Nobody. All rights stolen.",
+  "",
+  "[ OK ] Initializing kernel modules...",
+  "[ OK ] Mounting encrypted partitions...",
+  "[ WARN ] Heat sensor: DEGRADED",
+  "[ WARN ] Signal integrity: POOR (cheap cables detected)",
+  "[ OK ] Network stack loaded.",
+  "[ OK ] Ghost daemon: ACTIVE",
+  "",
+  "Welcome back, ghost. Debt timer is running.",
+  "Type \"help\" to list commands."
+]

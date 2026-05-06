@@ -1,0 +1,28 @@
+{
+  "hideout": {
+    "name": "Hideout",
+    "desc": "Your cramped apartment. Safe but isolated.",
+    "signal": 0
+  },
+  "market": {
+    "name": "Junk Market",
+    "desc": "Yuki's stall. Scavenged parts, no questions.",
+    "signal": 1
+  },
+  "rooftop": {
+    "name": "Rooftop R-7",
+    "desc": "High elevation. Better signal. Exposed.",
+    "signal": 3
+  },
+  "sewers": {
+    "name": "Sewer Node",
+    "desc": "Low detection. Terrible smell. Great cover.",
+    "signal": -1,
+    "detectionMod": -0.4
+  },
+  "blackmarket": {
+    "name": "Black Bazaar",
+    "desc": "Underground net. Illegal goods. High risk.",
+    "signal": 2
+  }
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "j_filerecover",
+    "title": "File Recovery - Mrs. Chen",
+    "type": "recovery",
+    "difficulty": 1,
+    "reward": 60,
+    "blackReward": 0,
+    "desc": "Recover deleted wedding photos from a corrupted drive.",
+    "timeLimit": 3,
+    "traceRisk": 5,
+    "software": "file_recovery.sh",
+    "minRep": 0
+  },
+  {
+    "id": "j_sniffer1",
+    "title": "Packet Intercept - Rival Corp",
+    "type": "intercept",
+    "difficulty": 2,
+    "reward": 140,
+    "blackReward": 40,
+    "desc": "Intercept traffic from NovaTech's local node. Don't get caught.",
+    "timeLimit": 2,
+    "traceRisk": 25,
+    "software": "basic_sniffer.exe",
+    "minRep": 0
+  },
+  {
+    "id": "j_intrusion1",
+    "title": "Node Breach - Warehouse Grid",
+    "type": "intrusion",
+    "difficulty": 3,
+    "reward": 0,
+    "blackReward": 280,
+    "desc": "Break into Arasaka's warehouse logistics node. Extract manifest.",
+    "timeLimit": 2,
+    "traceRisk": 60,
+    "software": null,
+    "minRep": 1
+  },
+  {
+    "id": "j_forensics1",
+    "title": "Digital Forensics - Evidence File",
+    "type": "forensics",
+    "difficulty": 2,
+    "reward": 180,
+    "blackReward": 0,
+    "desc": "A lawyer needs you to reconstruct deleted comms. Legal-ish.",
+    "timeLimit": 4,
+    "traceRisk": 10,
+    "software": "file_recovery.sh",
+    "minRep": 0
+  },
+  {
+    "id": "j_encrypt1",
+    "title": "Encryption Tool Contract",
+    "type": "contract",
+    "difficulty": 3,
+    "reward": 0,
+    "blackReward": 350,
+    "desc": "Build an encryption wrapper for a black market vendor. Deliver clean code.",
+    "timeLimit": 5,
+    "traceRisk": 20,
+    "software": null,
+    "minRep": 2
+  }
+]

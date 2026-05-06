@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+build/
+release/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Packaging artifacts
+*.asar
+*.zip
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.AppImage
+*.snap
+
+# Electron-builder specific
+-electron-builder.yml
+-electron-builder.json5
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+*.tsbuildinfo
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/

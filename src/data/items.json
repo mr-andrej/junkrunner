@@ -1,0 +1,356 @@
+{
+  "components": {
+    "cpu": [
+      {
+        "id": "cpu_celeron",
+        "name": "Celeron Scrap",
+        "category": "cpu",
+        "rarity": "starter",
+        "price": 0,
+        "desc": "Factory default trash. You're stuck with this.",
+        "stats": {
+          "threads": 2,
+          "power": 15
+        }
+      },
+      {
+        "id": "cpu_quad",
+        "name": "Quad-Core Salvage",
+        "category": "cpu",
+        "rarity": "common",
+        "price": 180,
+        "desc": "Thermal paste missing but it runs.",
+        "stats": {
+          "threads": 4,
+          "power": 35
+        }
+      },
+      {
+        "id": "cpu_hex",
+        "name": "6-Core Beast",
+        "category": "cpu",
+        "rarity": "rare",
+        "price": 380,
+        "desc": "Pulls from a gaming rig. Still has RGB dust.",
+        "stats": {
+          "threads": 6,
+          "power": 65
+        }
+      },
+      {
+        "id": "cpu_ryzen",
+        "name": "Ryzen 5000 Series",
+        "category": "cpu",
+        "rarity": "epic",
+        "price": 650,
+        "desc": "Military-grade. Unmarked serial. Don't ask.",
+        "stats": {
+          "threads": 8,
+          "power": 105
+        }
+      }
+    ],
+    "ram": [
+      {
+        "id": "ram_4gb",
+        "name": "4GB DDR3 Bent",
+        "category": "ram",
+        "rarity": "starter",
+        "price": 0,
+        "desc": "Bent pins. Somehow still works.",
+        "stats": {
+          "gb": 4
+        }
+      },
+      {
+        "id": "ram_8gb",
+        "name": "8GB DDR4 (cracked slot)",
+        "category": "ram",
+        "rarity": "common",
+        "price": 120,
+        "desc": "One slot is iffy. Works 90% of the time.",
+        "stats": {
+          "gb": 8,
+          "flawChance": 0.1
+        }
+      },
+      {
+        "id": "ram_16gb",
+        "name": "16GB DDR4 Kit",
+        "category": "ram",
+        "rarity": "rare",
+        "price": 280,
+        "desc": "Two matched sticks. Literally mint condition.",
+        "stats": {
+          "gb": 16
+        }
+      },
+      {
+        "id": "ram_32gb",
+        "name": "32GB DDR5 Enterprise",
+        "category": "ram",
+        "rarity": "epic",
+        "price": 520,
+        "desc": "Server pulls. Expensive but buttery smooth.",
+        "stats": {
+          "gb": 32
+        }
+      }
+    ],
+    "gpu": [
+      {
+        "id": "gpu_coprocessor",
+        "name": "Crypto Coprocessor",
+        "category": "gpu",
+        "rarity": "rare",
+        "price": 420,
+        "desc": "Cracks hashes 4x faster. Hot.",
+        "stats": {
+          "hashRate": 4,
+          "heatMod": 20
+        }
+      },
+      {
+        "id": "gpu_rtx",
+        "name": "RTX 3060 Mobile",
+        "category": "gpu",
+        "rarity": "rare",
+        "price": 380,
+        "desc": "From a laptop. Surprisingly good.",
+        "stats": {
+          "hashRate": 2.5,
+          "heatMod": 35
+        }
+      },
+      {
+        "id": "gpu_titan",
+        "name": "Nvidia Titan (Stolen)",
+        "category": "gpu",
+        "rarity": "epic",
+        "price": 850,
+        "desc": "Professional-grade. Don't ask where it came from.",
+        "stats": {
+          "hashRate": 6,
+          "heatMod": 50
+        }
+      }
+    ],
+    "network": [
+      {
+        "id": "net_dongle",
+        "name": "USB Dongle Knockoff",
+        "category": "network",
+        "rarity": "starter",
+        "price": 0,
+        "desc": "Made in a factory with no QA.",
+        "stats": {
+          "range": 1,
+          "integrity": 40
+        }
+      },
+      {
+        "id": "net_antenna",
+        "name": "Long-Range Antenna",
+        "category": "network",
+        "rarity": "common",
+        "price": 150,
+        "desc": "Boosts signal two zones.",
+        "stats": {
+          "range": 2,
+          "integrity": 70
+        }
+      },
+      {
+        "id": "net_phased",
+        "name": "Phased Array Rig",
+        "category": "network",
+        "rarity": "rare",
+        "price": 320,
+        "desc": "Military surplus. Directional lock on.",
+        "stats": {
+          "range": 4,
+          "integrity": 85
+        }
+      },
+      {
+        "id": "net_spoof",
+        "name": "Signal Spoof Board",
+        "category": "network",
+        "rarity": "epic",
+        "price": 500,
+        "desc": "Fakes your origin node. Rare.",
+        "stats": {
+          "range": 3,
+          "integrity": 90,
+          "spoof": true
+        }
+      }
+    ],
+    "cooling": [
+      {
+        "id": "cooling_heatsink",
+        "name": "Bent Heatsink",
+        "category": "cooling",
+        "rarity": "starter",
+        "price": 0,
+        "desc": "Found in a dumpster. Bent but functional.",
+        "stats": {
+          "capacity": 30
+        }
+      },
+      {
+        "id": "cooling_fan",
+        "name": "80mm Fan Array",
+        "category": "cooling",
+        "rarity": "common",
+        "price": 80,
+        "desc": "Loud as hell. Keeps temps down.",
+        "stats": {
+          "capacity": 60
+        }
+      },
+      {
+        "id": "cooling_liquid",
+        "name": "Custom Liquid Loop",
+        "category": "cooling",
+        "rarity": "rare",
+        "price": 250,
+        "desc": "Leaks sometimes. Worth it.",
+        "stats": {
+          "capacity": 100
+        }
+      },
+      {
+        "id": "cooling_phase",
+        "name": "Phase-Change Module",
+        "category": "cooling",
+        "rarity": "epic",
+        "price": 420,
+        "desc": "Nanite cooling. Expensive. Worth every credit.",
+        "stats": {
+          "capacity": 150
+        }
+      }
+    ],
+    "storage": [
+      {
+        "id": "storage_64",
+        "name": "64GB Flash",
+        "category": "storage",
+        "rarity": "starter",
+        "price": 0,
+        "desc": "Barely functional. Don't store anything important.",
+        "stats": {
+          "gb": 64
+        }
+      },
+      {
+        "id": "storage_256",
+        "name": "256GB SSD (refurb)",
+        "category": "storage",
+        "rarity": "common",
+        "price": 90,
+        "desc": "Someone's old drive. Wiped. Mostly.",
+        "stats": {
+          "gb": 256
+        }
+      },
+      {
+        "id": "storage_1tb",
+        "name": "1TB NVMe Gen4",
+        "category": "storage",
+        "rarity": "rare",
+        "price": 180,
+        "desc": "Fast. Really fast.",
+        "stats": {
+          "gb": 1024
+        }
+      },
+      {
+        "id": "storage_4tb",
+        "name": "4TB Enterprise SSD",
+        "category": "storage",
+        "rarity": "epic",
+        "price": 450,
+        "desc": "Server-grade reliability. Overkill but beautiful.",
+        "stats": {
+          "gb": 4096
+        }
+      }
+    ]
+  },
+  "software": [
+    {
+      "id": "soft_sniffer",
+      "name": "Basic Sniffer",
+      "category": "software",
+      "rarity": "common",
+      "price": 0,
+      "desc": "Packet capture tool. Starter edition.",
+      "filename": "basic_sniffer.exe",
+      "stats": {
+        "interceptionBoost": 1
+      }
+    },
+    {
+      "id": "soft_recovery",
+      "name": "File Recovery Shell",
+      "category": "software",
+      "rarity": "common",
+      "price": 0,
+      "desc": "Reconstruct deleted data.",
+      "filename": "file_recovery.sh",
+      "stats": {
+        "recoveryBoost": 1
+      }
+    },
+    {
+      "id": "soft_ghost",
+      "name": "Ghost Module v2",
+      "category": "software",
+      "rarity": "rare",
+      "price": 300,
+      "desc": "Reduces trace accumulation by 35%.",
+      "filename": "ghost_module.exe",
+      "stats": {
+        "traceMod": -0.35
+      }
+    },
+    {
+      "id": "soft_spoof",
+      "name": "Origin Spoofer Pro",
+      "category": "software",
+      "rarity": "rare",
+      "price": 280,
+      "desc": "Hide your true connection origin.",
+      "filename": "origin_spoof.exe",
+      "stats": {
+        "spoofMod": 0.6
+      }
+    },
+    {
+      "id": "soft_encryptor",
+      "name": "Cipher Suite Advanced",
+      "category": "software",
+      "rarity": "epic",
+      "price": 500,
+      "desc": "Military-grade encryption tools.",
+      "filename": "cipher_suite.exe",
+      "stats": {
+        "encryptionBoost": 2
+      }
+    },
+    {
+      "id": "soft_intrusion",
+      "name": "ICE Breaker",
+      "category": "software",
+      "rarity": "epic",
+      "price": 600,
+      "desc": "Bypass security nodes faster.",
+      "filename": "ice_breaker.exe",
+      "stats": {
+        "intrusionBoost": 1.5
+      }
+    }
+  ]
+}
