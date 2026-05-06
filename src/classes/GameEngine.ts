@@ -55,6 +55,9 @@ export class GameEngine {
     // Log the command
     state = state.addLog(`> ${cmd}`, "input");
 
+
+    // TODO: Handle the help command better, there should probably be a .json with possible commands with a description instead of
+    // having this list hardcoded
     switch (verb) {
       case "help":
         return state.addLogs([

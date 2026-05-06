@@ -1,7 +1,7 @@
 /**
  * DebtSystem - Handles debt management and payments
  */
-import type { GameState } from '../classes/GameState';
+import type { GameState } from "../classes/GameState";
 
 export class DebtSystem {
   pay(state: GameState): GameState {
@@ -10,21 +10,22 @@ export class DebtSystem {
     if (state.credits < payment) {
       return state.addLog(
         `Insufficient funds. Need ¥${payment}, have ¥${state.credits}.`,
-        'error'
+        "error",
       );
     }
 
     const newDebt = Math.max(0, state.debt - payment);
-    const newDebtDays = state.debtDays > 1 ? state.debtDays - 1 : state.debtDays;
+    const newDebtDays =
+      state.debtDays > 1 ? state.debtDays - 1 : state.debtDays;
 
     const newState = state.update({
       credits: state.credits - payment,
       debt: newDebt,
-      debtDays: newDebtDays
+      debtDays: newDebtDays,
     });
 
     return newState.addLog(
-      `Paid ¥${payment} toward debt. Remaining: ¥${newDebt}`
+      `Paid ¥${payment} toward debt. Remaining: ¥${newDebt}`,
     );
   }
 }

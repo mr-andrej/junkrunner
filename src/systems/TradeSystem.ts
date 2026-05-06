@@ -1,7 +1,7 @@
 /**
  * TradeSystem - Handles shops and buying items
  */
-import type { GameState, Item } from '../classes/GameState';
+import type { GameState, Item } from "../classes/GameState";
 
 interface ItemsData {
   components: Record<string, Item[]>;
@@ -15,19 +15,21 @@ interface Location {
 }
 
 export class TradeSystem {
-  constructor(private itemsData: ItemsData, private locationsData: Record<string, Location>) {}
+  constructor(
+    private itemsData: ItemsData,
+    private locationsData: Record<string, Location>,
+  ) {}
 
   getShopItems(location: string): Item[] {
-    if (location === 'market') {
+    if (location === "market") {
       return this.itemsData.components.cpu
         .concat(this.itemsData.components.ram)
         .concat(this.itemsData.components.network)
         .concat(this.itemsData.components.cooling)
         .concat(this.itemsData.components.storage)
-        .filter(item => item.rarity !== 'epic');
-    } else if (location === 'blackmarket') {
-      return this.itemsData.components.gpu
-        .concat(this.itemsData.software);
+        .filter((item) => item.rarity !== "epic");
+    } else if (location === "blackmarket") {
+      return this.itemsData.components.gpu.concat(this.itemsData.software);
     }
     return [];
   }
@@ -38,19 +40,19 @@ export class TradeSystem {
     if (!items || items.length === 0) {
       return state.addLog(
         `No shop available at ${this.locationsData[state.location]?.name}.`,
-        'error'
+        "error",
       );
     }
 
     const itemsList = items.map(
       (item, idx) =>
-        `[${idx + 1}] ${item.name} [${item.rarity}] - ¥${item.price}\n    ${item.desc}`
+        `[${idx + 1}] ${item.name} [${item.rarity}] - ¥${item.price}\n    ${item.desc}`,
     );
 
     return state.addLogs([
-      '━━━ AVAILABLE ITEMS ━━━',
+      "━━━ AVAILABLE ITEMS ━━━",
       ...itemsList,
-      'Use "buy <number>" to purchase'
+      'Use "buy <number>" to purchase',
     ]);
   }
 
@@ -58,7 +60,7 @@ export class TradeSystem {
     const items = this.getShopItems(state.location);
 
     if (!items || itemIdx < 0 || itemIdx >= items.length) {
-      return state.addLog('Invalid item number.', 'error');
+      return state.addLog("Invalid item number.", "error");
     }
 
     const item = items[itemIdx];
@@ -67,13 +69,13 @@ export class TradeSystem {
     if (!canAfford) {
       return state.addLog(
         `Insufficient funds. Need ¥${item.price}, have ¥${state.credits}.`,
-        'error'
+        "error",
       );
     }
 
     const newState = state.update({
       credits: state.credits - (item.price || 0),
-      inventory: [...state.inventory, item]
+      inventory: [...state.inventory, item],
     });
 
     return newState.addLog(`Purchased: ${item.name}`);

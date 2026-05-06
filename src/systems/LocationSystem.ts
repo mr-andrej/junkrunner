@@ -1,7 +1,7 @@
 /**
  * LocationSystem - Handles location management and travel
  */
-import type { GameState } from '../classes/GameState';
+import type { GameState } from "../classes/GameState";
 
 interface Location {
   name: string;
@@ -15,40 +15,40 @@ export class LocationSystem {
 
   listLocations(state: GameState): GameState {
     const locations = Object.entries(this.locationsData).map(
-      ([key, loc]) => `  ${key.padEnd(15)} : ${loc.name} - ${loc.desc}`
+      ([key, loc]) => `  ${key.padEnd(15)} : ${loc.name} - ${loc.desc}`,
     );
 
     return state.addLogs([
-      '━━━ ACCESSIBLE LOCATIONS ━━━',
+      "━━━ ACCESSIBLE LOCATIONS ━━━",
       ...locations,
-      'Use "go <name>" to travel. Costs 1 day.'
+      'Use "go <name>" to travel. Costs 1 day.',
     ]);
   }
 
   travel(state: GameState, destination: string | undefined): GameState {
     if (!destination) {
-      return state.addLog('Usage: go <location>', 'error');
+      return state.addLog("Usage: go <location>", "error");
     }
 
-    const locKey = Object.keys(this.locationsData).find(
-      k => k.toLowerCase().startsWith(destination.toLowerCase())
+    const locKey = Object.keys(this.locationsData).find((k) =>
+      k.toLowerCase().startsWith(destination.toLowerCase()),
     );
 
     if (!locKey) {
-      return state.addLog(`Location not found: ${destination}`, 'error');
+      return state.addLog(`Location not found: ${destination}`, "error");
     }
 
     const loc = this.locationsData[locKey];
     const newState = state.update({
       location: locKey,
       day: state.day + 1,
-      traceLevel: Math.min(100, state.traceLevel + loc.signal)
+      traceLevel: Math.min(100, state.traceLevel + loc.signal),
     });
 
     return newState.addLogs([
       `Traveling to ${loc.name}...`,
       loc.desc,
-      `Signal change: ${loc.signal >= 0 ? '+' : ''}${loc.signal}`
+      `Signal change: ${loc.signal >= 0 ? "+" : ""}${loc.signal}`,
     ]);
   }
 

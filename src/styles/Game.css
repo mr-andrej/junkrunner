@@ -1,7 +1,7 @@
 .terminal {
   background: #0d0f18;
   min-height: 600px;
-  font-family: 'Courier New', 'Lucida Console', monospace;
+  font-family: "Courier New", "Lucida Console", monospace;
   color: #cdd6f4;
   display: flex;
   flex-direction: column;

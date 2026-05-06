@@ -29,10 +29,18 @@ export class JobSystem {
     var randomisedJob = this.jobsData[randomIndex];
 
     randomisedJob.id += "_shfld";
-    randomisedJob.reward = Math.round(randomisedJob.reward * (Math.random() + 1));
-    randomisedJob.blackReward = Math.round(randomisedJob.blackReward * (Math.random() + 1));
-    randomisedJob.timeLimit = Math.round(randomisedJob.timeLimit * (Math.random() + 0.8));
-    randomisedJob.traceRisk =  Math.round(randomisedJob.traceRisk * (Math.random() + 0.8));
+    randomisedJob.reward = Math.round(
+      randomisedJob.reward * (Math.random() + 1),
+    );
+    randomisedJob.blackReward = Math.round(
+      randomisedJob.blackReward * (Math.random() + 1),
+    );
+    randomisedJob.timeLimit = Math.round(
+      randomisedJob.timeLimit * (Math.random() + 0.8),
+    );
+    randomisedJob.traceRisk = Math.round(
+      randomisedJob.traceRisk * (Math.random() + 0.8),
+    );
 
     console.log(randomisedJob);
 
