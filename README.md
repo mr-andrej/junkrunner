@@ -108,6 +108,7 @@ jobs              # List available contracts
 take <#>          # Accept a job
 run               # Execute active job
 abort             # Cancel job
+shu_run           # Execute a unlisted job
 locations         # Show accessible areas
 go <location>     # Travel somewhere
 shop              # Browse vendor items (at market/black market)
