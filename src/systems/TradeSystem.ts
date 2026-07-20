@@ -44,9 +44,10 @@ export class TradeSystem {
       );
     }
 
+    const currency = state.location === "blackmarket" ? "B¥" : "¥";
     const itemsList = items.map(
       (item, idx) =>
-        `[${idx + 1}] ${item.name} [${item.rarity}] - ¥${item.price}\n    ${item.desc}`,
+        `[${idx + 1}] ${item.name} [${item.rarity}] - ${currency}${item.price}\n    ${item.desc}`,
     );
 
     return state.addLogs([
@@ -59,22 +60,27 @@ export class TradeSystem {
   buyItem(state: GameState, itemIdx: number): GameState {
     const items = this.getShopItems(state.location);
 
-    if (!items || itemIdx < 0 || itemIdx >= items.length) {
+    if (!items || isNaN(itemIdx) || itemIdx < 0 || itemIdx >= items.length) {
       return state.addLog("Invalid item number.", "error");
     }
 
     const item = items[itemIdx];
-    const canAfford = state.credits >= (item.price || 0);
+    const price = item.price || 0;
+    const useBlack = state.location === "blackmarket";
+    const balance = useBlack ? state.blackCredits : state.credits;
+    const currency = useBlack ? "B¥" : "¥";
 
-    if (!canAfford) {
+    if (balance < price) {
       return state.addLog(
-        `Insufficient funds. Need ¥${item.price}, have ¥${state.credits}.`,
+        `Insufficient funds. Need ${currency}${price}, have ${currency}${balance}.`,
         "error",
       );
     }
 
     const newState = state.update({
-      credits: state.credits - (item.price || 0),
+      ...(useBlack
+        ? { blackCredits: state.blackCredits - price }
+        : { credits: state.credits - price }),
       inventory: [...state.inventory, item],
     });
 

@@ -71,7 +71,6 @@ export class CombatSystem {
       newState = newState.update({
         heat: 100,
         traceLevel: newTrace,
-        completedJobs: [...state.completedJobs, job.id],
         activeJob: null,
       });
       return newState.addLogs([
@@ -102,12 +101,12 @@ export class CombatSystem {
         activeJob: null,
       } as any);
 
-      // TODO : This might be a bad idea if I want to have stats in the game. Perhaps
-      // a unique shuffled ID should be generated in the JobSystem
+      // Shuffled jobs get unique IDs in JobSystem, so tracking them is safe;
+      // only listed jobs are consumed on success
       if (!shuffled) {
-        newState.completedJobs = [...state.completedJobs, job.id];
-      } else {
-        newState.completedJobs = [...state.completedJobs];
+        newState = newState.update({
+          completedJobs: [...newState.completedJobs, job.id],
+        });
       }
 
       return newState.addLogs([

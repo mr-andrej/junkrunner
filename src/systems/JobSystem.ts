@@ -25,26 +25,18 @@ export class JobSystem {
   }
 
   getRandomisedJob(): Job {
-    const randomIndex = Math.round(Math.random() * this.jobsData.length);
-    var randomisedJob = this.jobsData[randomIndex];
+    const randomIndex = Math.floor(Math.random() * this.jobsData.length);
+    const base = this.jobsData[randomIndex];
 
-    randomisedJob.id += "_shfld";
-    randomisedJob.reward = Math.round(
-      randomisedJob.reward * (Math.random() + 1),
-    );
-    randomisedJob.blackReward = Math.round(
-      randomisedJob.blackReward * (Math.random() + 1),
-    );
-    randomisedJob.timeLimit = Math.round(
-      randomisedJob.timeLimit * (Math.random() + 0.8),
-    );
-    randomisedJob.traceRisk = Math.round(
-      randomisedJob.traceRisk * (Math.random() + 0.8),
-    );
-
-    console.log(randomisedJob);
-
-    return randomisedJob;
+    // Copy the job so the shared jobs data is never mutated
+    return {
+      ...base,
+      id: `${base.id}_shfld_${Math.random().toString(36).slice(2, 8)}`,
+      reward: Math.round(base.reward * (Math.random() + 1)),
+      blackReward: Math.round(base.blackReward * (Math.random() + 1)),
+      timeLimit: Math.round(base.timeLimit * (Math.random() + 0.8)),
+      traceRisk: Math.round(base.traceRisk * (Math.random() + 0.8)),
+    };
   }
 
   listJobs(state: GameState): GameState {

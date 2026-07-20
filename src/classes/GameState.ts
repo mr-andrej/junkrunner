@@ -24,6 +24,9 @@ export interface Item {
   integrity?: number;
   capacity?: number;
   spoof?: boolean;
+  filename?: string;
+  // items.json nests purchasable item stats here; flattened on install
+  stats?: Record<string, any>;
 }
 
 interface Rig {
